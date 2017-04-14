@@ -434,7 +434,7 @@ namespace Prism.Windows
         /// <param name="e"></param>
         private void OnGoBackRequested(object sender, DeviceGestureEventArgs e)
         {
-            if (NavigationService.CanGoBack())
+            if (NavigationService.CanGoBack() && !e.Handled)
             {
                 NavigationService.GoBack();
                 e.Handled = true;
